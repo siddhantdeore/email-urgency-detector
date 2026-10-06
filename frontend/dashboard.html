@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive Analytics Dashboard - Priority Insights</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="/" class="nav-brand">
+      <div class="brand-icon">Ψ</div>
+      <div class="brand-title">Cognitive Priority AI</div>
+      <span class="brand-badge">B.Tech Cognitive Project</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Email Analyzer</a>
+      <a href="/dashboard" class="nav-link active">Analytics Dashboard</a>
+      <a href="/model" class="nav-link">Model & Explainability</a>
+      <a href="/docs" target="_blank" class="nav-link">API Docs ↗</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="hero">
+      <h1>Cognitive Priority Analytics</h1>
+      <p>Real-time telemetry, urgency distribution, and cognitive intent intelligence</p>
+    </header>
+
+    <!-- Stat KPI Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Total Analyzed</div>
+        <div id="stat-total" class="stat-value">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Historical & live requests</span>
+      </div>
+
+      <div class="stat-card" style="border-left: 4px solid var(--critical);">
+        <div class="stat-title">Critical Urgency</div>
+        <div id="stat-critical" class="stat-value" style="color: var(--critical);">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Immediate escalation</span>
+      </div>
+
+      <div class="stat-card" style="border-left: 4px solid var(--high);">
+        <div class="stat-title">High Priority</div>
+        <div id="stat-high" class="stat-value" style="color: var(--high);">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Action required today</span>
+      </div>
+
+      <div class="stat-card" style="border-left: 4px solid var(--medium);">
+        <div class="stat-title">Medium Priority</div>
+        <div id="stat-medium" class="stat-value" style="color: var(--medium);">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Standard task queue</span>
+      </div>
+
+      <div class="stat-card" style="border-left: 4px solid var(--low);">
+        <div class="stat-title">Low Priority</div>
+        <div id="stat-low" class="stat-value" style="color: var(--low);">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Informational / routine</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Average Urgency Score</div>
+        <div id="stat-avg-score" class="stat-value">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Calculated on 0-100 scale</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Average Confidence</div>
+        <div id="stat-avg-conf" class="stat-value" style="color: #818cf8;">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Multi-factor certainty</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Most Common Intent</div>
+        <div id="stat-top-intent" class="stat-value" style="font-size: 1.4rem; color: var(--intent-color);">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Top intent category</span>
+      </div>
+    </div>
+
+    <!-- Charts Grid -->
+    <div class="chart-grid">
+      <!-- Chart 1: Urgency Distribution -->
+      <div class="chart-card">
+        <div class="card-title">
+          <span>Urgency Level Distribution</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Four-Tier Classification</span>
+        </div>
+        <div style="position: relative; height: 300px;">
+          <canvas id="chart-urgency"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 2: Intent Distribution -->
+      <div class="chart-card">
+        <div class="card-title">
+          <span>Intent Distribution</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Semantic Class Counts</span>
+        </div>
+        <div style="position: relative; height: 300px;">
+          <canvas id="chart-intent"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 3: Average Urgency Score Breakdown -->
+      <div class="chart-card">
+        <div class="card-title">
+          <span>Volume by Urgency Threshold</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Score Brackets</span>
+        </div>
+        <div style="position: relative; height: 300px;">
+          <canvas id="chart-scores"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 4: Confidence Distribution -->
+      <div class="chart-card">
+        <div class="card-title">
+          <span>Confidence Profile Across Priority Tiers</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Certainty Index</span>
+        </div>
+        <div style="position: relative; height: 300px;">
+          <canvas id="chart-confidence"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 3rem;">
+    Cognitive Priority Analytics • Real-time Monitoring & Decision Telemetry
+  </footer>
+
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
+

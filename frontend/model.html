@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Architecture & Explainability - Cognitive Email Priority</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="/" class="nav-brand">
+      <div class="brand-icon">Ψ</div>
+      <div class="brand-title">Cognitive Priority AI</div>
+      <span class="brand-badge">B.Tech Cognitive Project</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Email Analyzer</a>
+      <a href="/dashboard" class="nav-link">Analytics Dashboard</a>
+      <a href="/model" class="nav-link active">Model & Explainability</a>
+      <a href="/docs" target="_blank" class="nav-link">API Docs ↗</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="hero">
+      <h1>Machine Learning & Explainable AI (XAI)</h1>
+      <p>Scientific model evaluation, feature attribution coefficients, and algorithm comparison benchmarks</p>
+    </header>
+
+    <!-- Top ML Metrics Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Active Model</div>
+        <div id="m-name" class="stat-value" style="font-size: 1.15rem; color: #818cf8;">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Calibrated Probabilistic NLP</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Accuracy</div>
+        <div id="m-acc" class="stat-value" style="color: var(--low);">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Stratified test evaluation</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Precision (Weighted)</div>
+        <div id="m-prec" class="stat-value">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Low false positive rate</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Recall (Weighted)</div>
+        <div id="m-rec" class="stat-value">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Minimizes missed emergencies</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">F1-Score</div>
+        <div id="m-f1" class="stat-value" style="color: #38bdf8;">--</div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Harmonic mean of precision & recall</span>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-title">Train / Test Samples</div>
+        <div class="stat-value" style="font-size: 1.4rem;">
+          <span id="m-train">--</span> / <span id="m-test">--</span>
+        </div>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">80 / 20 stratified split</span>
+      </div>
+    </div>
+
+    <!-- Algorithm Comparison Experiment Section -->
+    <div class="card">
+      <div class="card-title">
+        <span>5-Model Empirical Benchmark Comparison</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Experiment Suite Results</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+        To avoid heuristic bias, we conducted an empirical benchmark comparing 5 distinct statistical and tree-based machine learning architectures on identical feature representations.
+      </p>
+      <div id="comparison-table-container">
+        <!-- Rendered by model.js -->
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Confusion Matrix Card -->
+      <div class="card">
+        <div class="card-title">
+          <span>Test Confusion Matrix</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">100 Test Instances</span>
+        </div>
+        <div id="cm-container" style="overflow-x: auto;">
+          <!-- Rendered by model.js -->
+        </div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
+          Diagonal cells indicate correct classifications. Off-diagonal cells represent misclassifications.
+        </div>
+      </div>
+
+      <!-- Selection Rationale Card -->
+      <div class="card">
+        <div class="card-title">
+          <span>Why TF-IDF + Logistic Regression was Selected</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Scientific Rationale</span>
+        </div>
+        <div id="m-selection-rationale" style="font-size: 0.92rem; color: #e2e8f0; line-height: 1.7; margin-bottom: 1rem;">
+          <!-- Loaded dynamically -->
+        </div>
+        <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted);">
+          <strong style="color: #fff;">Key Advantage for Cognitive Computing:</strong> Unlike opaque deep neural networks, Logistic Regression provides direct linear feature attribution via weights (\(w_i\)) and soft probability calibration through the softmax operator, making every triage decision completely explainable and auditable.
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Attribution Card -->
+    <div class="card">
+      <div class="card-title">
+        <span>Top Informative Feature Weights (XAI)</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Learned Regression Coefficients</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+        The system extracts the most positive coefficient weights associated with each urgency class, revealing the exact lexical patterns the model uses to distinguish critical emergencies from routine updates.
+      </p>
+      <div id="features-container">
+        <!-- Rendered by model.js -->
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 3rem;">
+    Cognitive Priority AI • Scientific Model Specifications & Explainable AI Architecture
+  </footer>
+
+  <script src="/static/js/model.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+{
+  "total_analyzed": 507,
+  "critical_count": 129,
+  "high_count": 127,
+  "medium_count": 126,
+  "low_count": 125,
+  "urgency_distribution": {
+    "Critical": 129,
+    "High": 127,
+    "Medium": 126,
+    "Low": 125
+  },
+  "intent_distribution": {
+    "Technical Issue": 126,
+    "Security Alert": 55,
+    "Payment Issue": 45,
+    "Meeting": 60,
+    "Deadline": 50,
+    "Request": 71,
+    "Information": 50,
+    "General Communication": 50
+  },
+  "score_sum": 25517,
+  "confidence_sum": 465.3199999999999
+}

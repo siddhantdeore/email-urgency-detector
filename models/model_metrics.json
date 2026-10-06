@@ -1,0 +1,253 @@
+{
+  "model_name": "TF-IDF + Multinomial Logistic Regression",
+  "accuracy": 0.99,
+  "precision": 0.9904,
+  "recall": 0.99,
+  "f1_score": 0.99,
+  "training_samples": 400,
+  "testing_samples": 100,
+  "classes": [
+    "Critical",
+    "High",
+    "Medium",
+    "Low"
+  ],
+  "confusion_matrix": [
+    [
+      25,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      25,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      25,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      24
+    ]
+  ],
+  "classification_report": {
+    "Critical": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 25.0
+    },
+    "High": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 25.0
+    },
+    "Medium": {
+      "precision": 0.9615384615384616,
+      "recall": 1.0,
+      "f1-score": 0.9803921568627451,
+      "support": 25.0
+    },
+    "Low": {
+      "precision": 1.0,
+      "recall": 0.96,
+      "f1-score": 0.9795918367346939,
+      "support": 25.0
+    },
+    "accuracy": 0.99,
+    "macro avg": {
+      "precision": 0.9903846153846154,
+      "recall": 0.99,
+      "f1-score": 0.9899959983993598,
+      "support": 100.0
+    },
+    "weighted avg": {
+      "precision": 0.9903846153846154,
+      "recall": 0.99,
+      "f1-score": 0.9899959983993597,
+      "support": 100.0
+    }
+  },
+  "top_features": {
+    "Critical": [
+      {
+        "feature": "immediately",
+        "weight": 1.159
+      },
+      {
+        "feature": "detected",
+        "weight": 1.032
+      },
+      {
+        "feature": "across",
+        "weight": 0.962
+      },
+      {
+        "feature": "data",
+        "weight": 0.937
+      },
+      {
+        "feature": "failure",
+        "weight": 0.935
+      },
+      {
+        "feature": "minute",
+        "weight": 0.926
+      },
+      {
+        "feature": "immediate",
+        "weight": 0.895
+      },
+      {
+        "feature": "right",
+        "weight": 0.879
+      },
+      {
+        "feature": "credential",
+        "weight": 0.839
+      },
+      {
+        "feature": "service",
+        "weight": 0.773
+      }
+    ],
+    "High": [
+      {
+        "feature": "today",
+        "weight": 2.055
+      },
+      {
+        "feature": "release",
+        "weight": 1.334
+      },
+      {
+        "feature": "candidate",
+        "weight": 1.295
+      },
+      {
+        "feature": "needed",
+        "weight": 1.214
+      },
+      {
+        "feature": "tomorrow",
+        "weight": 1.05
+      },
+      {
+        "feature": "before",
+        "weight": 1.034
+      },
+      {
+        "feature": "blocker",
+        "weight": 0.855
+      },
+      {
+        "feature": "test",
+        "weight": 0.841
+      },
+      {
+        "feature": "pm",
+        "weight": 0.781
+      },
+      {
+        "feature": "review",
+        "weight": 0.764
+      }
+    ],
+    "Low": [
+      {
+        "feature": "employee",
+        "weight": 1.077
+      },
+      {
+        "feature": "sharing",
+        "weight": 1.064
+      },
+      {
+        "feature": "summer",
+        "weight": 0.982
+      },
+      {
+        "feature": "tech",
+        "weight": 0.98
+      },
+      {
+        "feature": "slide",
+        "weight": 0.942
+      },
+      {
+        "feature": "best",
+        "weight": 0.928
+      },
+      {
+        "feature": "best practice",
+        "weight": 0.928
+      },
+      {
+        "feature": "practice",
+        "weight": 0.928
+      },
+      {
+        "feature": "friday",
+        "weight": 0.908
+      },
+      {
+        "feature": "monthly",
+        "weight": 0.861
+      }
+    ],
+    "Medium": [
+      {
+        "feature": "feedback",
+        "weight": 1.514
+      },
+      {
+        "feature": "regarding",
+        "weight": 1.21
+      },
+      {
+        "feature": "sync",
+        "weight": 1.192
+      },
+      {
+        "feature": "let",
+        "weight": 1.124
+      },
+      {
+        "feature": "request",
+        "weight": 1.077
+      },
+      {
+        "feature": "question regarding",
+        "weight": 0.996
+      },
+      {
+        "feature": "question",
+        "weight": 0.996
+      },
+      {
+        "feature": "follow",
+        "weight": 0.933
+      },
+      {
+        "feature": "let know",
+        "weight": 0.912
+      },
+      {
+        "feature": "know",
+        "weight": 0.912
+      }
+    ]
+  },
+  "intent_accuracy": 0.27,
+  "intent_f1": 0.248,
+  "why_selected": "Multinomial Logistic Regression with sublinear TF-IDF features provides state-of-the-art classification accuracy for text priority tasks while preserving full mathematical explainability. Unlike opaque deep neural networks, its learned weights directly quantify feature attribution, enabling transparent reasoning explanations and instant low-latency predictions."
+}

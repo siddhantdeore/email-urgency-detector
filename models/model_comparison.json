@@ -1,0 +1,190 @@
+{
+  "dataset_size": 500,
+  "train_samples": 400,
+  "test_samples": 100,
+  "classes": [
+    "Critical",
+    "High",
+    "Medium",
+    "Low"
+  ],
+  "models": [
+    {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.99,
+      "precision": 0.9904,
+      "recall": 0.99,
+      "f1_score": 0.99,
+      "training_time_ms": 78.67,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          25,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          24
+        ]
+      ],
+      "description": "Evaluated on 400 train and 100 test samples."
+    },
+    {
+      "model_name": "Naive Bayes (Multinomial)",
+      "accuracy": 0.99,
+      "precision": 0.9904,
+      "recall": 0.99,
+      "f1_score": 0.99,
+      "training_time_ms": 2.18,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          25,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          24
+        ]
+      ],
+      "description": "Evaluated on 400 train and 100 test samples."
+    },
+    {
+      "model_name": "Linear SVM",
+      "accuracy": 0.99,
+      "precision": 0.9904,
+      "recall": 0.99,
+      "f1_score": 0.99,
+      "training_time_ms": 96.26,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          25,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          24
+        ]
+      ],
+      "description": "Evaluated on 400 train and 100 test samples."
+    },
+    {
+      "model_name": "Random Forest",
+      "accuracy": 0.98,
+      "precision": 0.9815,
+      "recall": 0.98,
+      "f1_score": 0.9802,
+      "training_time_ms": 135.11,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          24,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          24
+        ]
+      ],
+      "description": "Evaluated on 400 train and 100 test samples."
+    },
+    {
+      "model_name": "Decision Tree",
+      "accuracy": 0.97,
+      "precision": 0.9732,
+      "recall": 0.97,
+      "f1_score": 0.9699,
+      "training_time_ms": 11.48,
+      "confusion_matrix": [
+        [
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          22,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          25
+        ]
+      ],
+      "description": "Evaluated on 400 train and 100 test samples."
+    }
+  ],
+  "best_model": "Logistic Regression",
+  "recommendation": "Logistic Regression offers the optimal balance of high precision/recall, sub-millisecond inference, smooth probability calibration via softmax, and transparent feature interpretability through learned coefficients."
+}
